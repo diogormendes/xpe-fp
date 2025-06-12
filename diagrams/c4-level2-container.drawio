@@ -1,0 +1,30 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.1.4">
+  <diagram name="C4-Level2-Container" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
+    <mxGraphModel dx="1809" dy="1110" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="systemBoundary" value="APP" style="fillColor=none;strokeColor=#666666;strokeWidth=2;dashed=1;align=left;verticalAlign=top;fontStyle=1;fontSize=14;spacingLeft=10;spacingTop=10;" parent="1" vertex="1">
+          <mxGeometry x="380" y="100" width="310" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="webApp" value="&lt;b&gt;Web Application&lt;/b&gt;&lt;br&gt;[Container: Node.js, Express]&lt;br&gt;&lt;br&gt;Provides REST API endpoints" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;strokeColor=none;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="440" y="160" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="database" value="&lt;b&gt;Database&lt;/b&gt;&lt;br&gt;[Container: SQLite]&lt;br&gt;&lt;br&gt;Stores client information" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#23A2D9;strokeColor=none;fontColor=#ffffff;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="455" y="380" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rel1" value="Makes API calls&lt;br&gt;[HTTP/JSON]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fontColor=#707070;jumpStyle=none;" parent="1" source="ao8eyfxHeOA3MJCErqGJ-1" target="webApp" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="210" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel2" value="Reads from and writes to&lt;br&gt;[Sequelize ORM]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fontColor=#707070;jumpStyle=none;" parent="1" source="webApp" target="database" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ao8eyfxHeOA3MJCErqGJ-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="155" width="60" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

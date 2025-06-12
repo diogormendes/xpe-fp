@@ -37,6 +37,7 @@ finalProject/
 ├── app.js                     # Main application entry point
 ├── package.json               # Dependencies and scripts
 ├── package-lock.json          # Dependency lock file
+├── README.md                  # Project documentation
 ├── controllers/
 │   └── clientController.js    # HTTP request handlers
 ├── routes/
@@ -48,6 +49,11 @@ finalProject/
 ├── data/
 │   ├── database.js            # Database configuration
 │   └── db.sqlite              # SQLite database file
+└── diagrams/                  # Architecture documentation
+    ├── c4-level1-system-context.drawio
+    ├── c4-level2-container.drawio
+    ├── c4-level3-component.drawio
+    └── c4-level4-code.drawio
 ```
 
 ### File Descriptions:
@@ -58,6 +64,7 @@ finalProject/
 - **`services/`**: Contain business logic and interact with models
 - **`models/`**: Define data structure and database schema using Sequelize
 - **`data/`**: Database configuration and SQLite file storage
+- **`diagrams/`**: Architecture documentation using C4 Model methodology
 
 ## 🗄️ Database Schema
 
@@ -192,7 +199,51 @@ curl -X PUT http://localhost:3000/clients/1 \
 curl -X DELETE http://localhost:3000/clients/1
 ```
 
-Open these files in [draw.io](https://app.diagrams.net/) to view the architecture diagrams.
+## 📊 C4 Model Documentation
+
+This project includes comprehensive architecture documentation using the C4 Model methodology. The C4 Model provides a hierarchical approach to software architecture documentation, with each level providing increasing detail.
+
+### Architecture Overview
+
+The Client Management System follows a **layered architecture** pattern with clear separation of concerns:
+
+```
+┌─────────────────┐
+│   API Routes    │  ← HTTP endpoint definitions
+├─────────────────┤
+│  Controllers    │  ← Request/Response handling
+├─────────────────┤
+│   Services      │  ← Business logic
+├─────────────────┤
+│    Models       │  ← Data models (Sequelize)
+├─────────────────┤
+│   Database      │  ← SQLite storage
+└─────────────────┘
+```
+
+### C4 Model Levels
+
+All diagrams are located in the `diagrams/` folder and can be opened with [draw.io](https://app.diagrams.net/):
+
+1. **Level 1 - System Context** (`c4-level1-system-context.drawio`)
+   - **Purpose**: Shows the big picture of the system and its users
+   - **Audience**: Everyone (technical and non-technical stakeholders)
+   - **Content**: API consumers interacting with the Client Management System
+
+2. **Level 2 - Container** (`c4-level2-container.drawio`)
+   - **Purpose**: Shows the high-level technology choices and how containers communicate
+   - **Audience**: Technical stakeholders, architects, developers
+   - **Content**: Web Application (Node.js/Express) and Database (SQLite) containers
+
+3. **Level 3 - Component** (`c4-level3-component.drawio`)
+   - **Purpose**: Shows the major structural building blocks and their interactions
+   - **Audience**: Software architects and developers
+   - **Content**: Routes, Controllers, Services, Models, and Database Config components
+
+4. **Level 4 - Code** (`c4-level4-code.drawio`)
+   - **Purpose**: Shows the implementation details at the class level
+   - **Audience**: Developers and maintainers
+   - **Content**: Class diagrams with methods, properties, and relationships
 
 ## 🛠️ Technologies Used
 
@@ -200,7 +251,7 @@ Open these files in [draw.io](https://app.diagrams.net/) to view the architectur
 - **Framework**: Express.js v5.1.0
 - **Database**: SQLite v5.1.7
 - **ORM**: Sequelize v6.37.7
-- **Architecture**: Clean Architecture
+- **Documentation**: C4 Model
 
 ### Dependencies
 ```json
